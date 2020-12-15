@@ -1,5 +1,5 @@
 <?php
-require 'headercars.php';
+require 'headercars.html';
 ?>
 <title>
 Seller Sign Up
@@ -70,94 +70,8 @@ function myFunction() {
             
             <p class="h3 text-center"><b>Sign up credentials</b></p>
 <!--<small  class="form-text text-danger">Fill all fields</small>-->
-			<?php
-			if(isset($_GET['error'])){
-				if($_GET['error'] == "emptyfields"){
-					echo '<p class="form-text text-danger"> Fill in all fields!</p>';
-				}else if($_GET['error'] == "invalidemailusername"){
-					echo '<p class="form-text text-danger"> Invalid email and Username!</p>';
-				}
-				else if($_GET['error'] == "invalidemail"){
-					echo '<p class="form-text text-danger"> Invalid email !</p>';
-				}else if($_GET['error'] == "invalidusername"){
-					echo '<p class="form-text text-danger"> Invalid Username !</p>';
-				}else if($_GET['error'] == "passwordcheck"){
-					echo '<p class="form-text text-danger"> Your Password do not match !</p>';
-				}else if($_GET['error'] == "Try another username"){
-					echo '<p class="form-text text-danger"> Username Taken !</p>';
-			}else if($_GET['error'] == "Contact Already Exists"){
-					echo '<p class="form-text text-danger"> Contact Already Exists !</p>';
-			}
-			else if($_GET['error'] == "Email Already Exists"){
-					echo '<p class="form-text text-danger"> Email Already Exists !</p>';
-			}else if($_GET['error'] == "Invalid Password"){
-					echo '<p class="form-text text-danger"> Password should be at least 8 characters in length and should include at least one uppercase letter, one number and one special character!.</p>';
-			}
-			}
-			 else if(isset($_GET['signup'])){
-			if($_GET['signup'] == "success"){
-
-	echo '<p class="form-text text-danger"> Signup successful !</p>';
-			}
-			}
-			?>
-			<form  action = "includes/seller.inc.php" method = "POST" >
-			<!--name="myForm" onsubmit="return validateForm()"-->
-			<?php
-	if(isset($_GET['first'])){
-		$first = $_GET['first'];
-		echo '    <input class="form-control"  type="text" name="first" placeholder="Enter First Name" value="'.$first.'"><br />
-                    <span class="Error"></span>';
-	}else {
-	echo '  <input class="form-control" type="text" name="first" placeholder="Enter First Name"><br />
-						<span class="Error"></span>';
-	}
-	if(isset($_GET['last'])){
-		$last = $_GET['last'];
-		echo '    <input class="form-control"  type="text" name="last" placeholder="Enter Last Name" value="'.$last.'"><br />
-                    <span class="Error"></span>';
-	}else {
-	echo '  <input class="form-control" type="text" name="last" placeholder="Enter Last Name"><br />
-						<span class="Error"></span>';
-	}
-	if(isset($_GET['username'])){
-		$username = $_GET['username'];
-		echo '    <input class="form-control"  type="text" name="username" placeholder="Enter Username" value="'.$username.'"><br />
-                    <span class="Error"></span>';
-	}else {
-	echo '  <input class="form-control" type="text" name="username" placeholder="Enter Username"><br />
-						<span class="Error"></span>';
-	}
-	if(isset($_GET['contact'])){
-		$contact = $_GET['contact'];
-		echo '    <input class="form-control"  type="number" min="0100000000" max="100000000000" name="contact" placeholder="Enter Contact" value="'.$contact.'"><br />
-                    <span class="Error"></span>';
-	}else {
-	echo '  <input class="form-control"  type="number" min="0100000000" max="100000000000" name="contact" placeholder="Enter Contact"><br />
-						<span class="Error"></span>';
-	}
-	if(isset($_GET['location'])){
-		$location = $_GET['location'];
-		echo '    <input class="form-control"  type="text" name="location" placeholder="Enter Location" value="'.$location.'"><br />
-                    <span class="Error"></span>';
-	}else {
-	echo '  <input class="form-control" type="text" name="location" placeholder="Enter Location"><br />
-						<span class="Error"></span>';
-	}
-	if(isset($_GET['email'])){
-		$email = $_GET['email'];
-		echo '    <input class="form-control"  type="email" name="email" placeholder="Enter Email" value="'.$email.'"><br />
-                    <span class="Error"></span>';
-	}else {
-	echo '  <input class="form-control" type="email" name="email" placeholder="Enter Email"><br />
-						<span class="Error"></span>';
-	}
-	
-	?>
-	
 			
-			
-                <!--  <input class="form-control" id="ha" type="text" name="first" placeholder="Enter First Name"><br />
+	    <form><input class="form-control" id="ha" type="text" name="first" placeholder="Enter First Name"><br />
                     <span class="Error"></span>
 			<input class="form-control" id="ha" type="text" name="last"  placeholder="Enter Last Name"><br />
                     <span class="Error"></span>
